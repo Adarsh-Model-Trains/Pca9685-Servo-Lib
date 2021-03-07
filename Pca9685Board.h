@@ -10,6 +10,12 @@
 #include <Arduino.h>
 #include "Pca9685.h"
 
+typedef struct  {
+  int boardNo;
+  int boardPin;
+  bool processed;
+} BoardPin;
+
 class Pca9685Board {
 
   private:
@@ -20,15 +26,11 @@ class Pca9685Board {
       0x70, 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78, 0x79, 0x7A, 0x7B, 0x7C, 0x7D, 0x7E, 0x7F
     };
 
-    typedef struct  {
-      int boardNo;
-      int boardPin;
-      bool processed;
-    } BoardPin;
-    
+
+
     int _totalPca9685Boards = 0;
     int _pwmFrequency = 60;
-    
+
     Pca9685 * _pca9685Boards;
 
     void initPca9685Boards();

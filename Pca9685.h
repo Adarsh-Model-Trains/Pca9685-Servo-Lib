@@ -10,14 +10,16 @@
 #include <Arduino.h>
 #include "Adafruit_PWMServoDriver.h"
 
+typedef struct {
+  int _openState;
+  int _closeState;
+  bool _isOpen;
+} Pca9685Pin;
+
+
 class Pca9685 {
 
   private:
-    typedef struct {
-      int _openState;
-      int _closeState;
-      bool _isOpen;
-    } Pca9685Pin;
 
     int _defaultState;
     int _totalPins = -1;

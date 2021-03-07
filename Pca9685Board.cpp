@@ -17,8 +17,8 @@ void Pca9685Board::initPca9685Boards() {
   }
 }
 
-Pca9685Board::BoardPin Pca9685Board::findBoardPin(int pinNo) {
-  Pca9685Board::BoardPin boardSlot;
+BoardPin Pca9685Board::findBoardPin(int pinNo) {
+  BoardPin boardSlot;
   int board = (pinNo / 16);
   if (board <= _totalPca9685Boards && pinNo <= (_totalPca9685Boards * 16)) {
     int totalPins = (board * 16);
@@ -34,13 +34,13 @@ Pca9685Board::BoardPin Pca9685Board::findBoardPin(int pinNo) {
 }
 
 bool Pca9685Board::throwSwitch(int pinNo) {
-  Pca9685Board::BoardPin boardSlot = findBoardPin(pinNo);
+  BoardPin boardSlot = findBoardPin(pinNo);
   _pca9685Boards[boardSlot.boardNo].throwSwitchPca9685Pin(boardSlot.boardPin);
   return true;
 }
 
 bool Pca9685Board::closeSwitch(int pinNo) {
-  Pca9685Board::BoardPin boardSlot = findBoardPin(pinNo);
+  BoardPin boardSlot = findBoardPin(pinNo);
   _pca9685Boards[boardSlot.boardNo].closeSwitchPca9685Pin(boardSlot.boardPin);
   return true;
 }
@@ -54,7 +54,7 @@ void Pca9685Board::refreshBoard(int boardNo) {
 }
 
 void Pca9685Board::setSwitchRange(int pinNo, int openRange, int closeRange) {
-  Pca9685Board::BoardPin boardSlot = findBoardPin(pinNo);
+  BoardPin boardSlot = findBoardPin(pinNo);
   _pca9685Boards[boardSlot.boardNo].setSwitchOpenCloseRange(boardSlot.boardPin, openRange, closeRange);
 }
 
