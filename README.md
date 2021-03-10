@@ -20,19 +20,19 @@ NOTE: Order of Pca9685 board address wise must be in sequence otherwise it will 
 
 
 ## Single Board 
-![img]("/image/connection-details.png")
+![img](/image/connection-details.png)
 
 ## MultiBoard in chain 
 
-![img]("/image/multiBoard_dasichain.jpg")
+![img](/image/multiBoard_dasichain.jpg)
 
 ### or 
 
-![img]("/image/multi_pca9685-servo.png")
+![img](/image/multi_pca9685-servo.png)
 
 
 ## Connection details
-![img]("/image/connection-dettails.JPG")
+![img](/image/connection-dettails.JPG)
 ```
 sda and scl from arduino to pca9685 
 external power supply +5v and gnd to the breadboard 
@@ -47,4 +47,4 @@ NOTE please refer the pca9684 board configuation details section
 
 ## Pca9684 Configuation Details 
 ### soldering for pca9685 board for adddress configuation in dasi chain
-![img]("/image/pca9685-soldering-address-chart.png")
+![img](/image/pca9685-soldering-address-chart.png)
