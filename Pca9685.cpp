@@ -21,8 +21,8 @@ void Pca9685::init() {
 }
 
 void Pca9685::initPca9685() {
-  _pwm.begin();
   _pwm = Adafruit_PWMServoDriver(_boardsAddress);
+  _pwm.begin();
   _pwm.setPWMFreq(_pwmFrequency);
 }
 

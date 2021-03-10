@@ -8,7 +8,8 @@
 #include "Pca9685Board.h"
 
 
-void Pca9685Board::initPca9685Boards() {
+void Pca9685Board::initPca9685Boards(int totalPca9685Boards) {
+  _totalPca9685Boards = totalPca9685Boards;
   _pca9685Boards = new Pca9685[_totalPca9685Boards];
   for (int i = 0; i < _totalPca9685Boards; i++) {
     _pca9685Boards[i].setBoardAddress(_boardAddress[i]);
@@ -17,12 +18,13 @@ void Pca9685Board::initPca9685Boards() {
   }
 }
 
-BoardPin Pca9685Board::findBoardPin(int pinNo) {
-  BoardPin boardSlot;
+Pca9685Board::BoardPin Pca9685Board::findBoardPin(int pinNo) {
+  Pca9685Board::BoardPin boardSlot;
+  pinNo = pinNo - 1;
   int board = (pinNo / 16);
   if (board <= _totalPca9685Boards && pinNo <= (_totalPca9685Boards * 16)) {
     int totalPins = (board * 16);
-    int pin = (pinNo - totalPins) - 1;
+    int pin = (pinNo - totalPins);
     pin = (pin == -1) ? 0 : pin;
     boardSlot.processed = true;
     boardSlot.boardNo = board;
@@ -34,13 +36,13 @@ BoardPin Pca9685Board::findBoardPin(int pinNo) {
 }
 
 bool Pca9685Board::throwSwitch(int pinNo) {
-  BoardPin boardSlot = findBoardPin(pinNo);
+  Pca9685Board::BoardPin boardSlot = findBoardPin(pinNo);
   _pca9685Boards[boardSlot.boardNo].throwSwitchPca9685Pin(boardSlot.boardPin);
   return true;
 }
 
 bool Pca9685Board::closeSwitch(int pinNo) {
-  BoardPin boardSlot = findBoardPin(pinNo);
+  Pca9685Board::BoardPin boardSlot = findBoardPin(pinNo);
   _pca9685Boards[boardSlot.boardNo].closeSwitchPca9685Pin(boardSlot.boardPin);
   return true;
 }
@@ -54,17 +56,13 @@ void Pca9685Board::refreshBoard(int boardNo) {
 }
 
 void Pca9685Board::setSwitchRange(int pinNo, int openRange, int closeRange) {
-  BoardPin boardSlot = findBoardPin(pinNo);
+  Pca9685Board::BoardPin boardSlot = findBoardPin(pinNo);
   _pca9685Boards[boardSlot.boardNo].setSwitchOpenCloseRange(boardSlot.boardPin, openRange, closeRange);
 }
 
 void Pca9685Board::displayPinState() {
   Serial.print("Total Boards ");
   Serial.println(_totalPca9685Boards);
-  for (int i = 0; i < _totalPca9685Boards; i++) {
-    Serial.print("Address ");
-    Serial.println(_pca9685Boards[i].getBoardAddress());
-  }
   for (int i = 0; i < _totalPca9685Boards; i++) {
     _pca9685Boards[i].displayPca9685PinState();
     Serial.println("-");

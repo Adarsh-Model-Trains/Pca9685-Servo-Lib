@@ -10,11 +10,7 @@
 #include <Arduino.h>
 #include "Pca9685.h"
 
-typedef struct  {
-  int boardNo;
-  int boardPin;
-  bool processed;
-} BoardPin;
+
 
 class Pca9685Board {
 
@@ -26,26 +22,23 @@ class Pca9685Board {
       0x70, 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78, 0x79, 0x7A, 0x7B, 0x7C, 0x7D, 0x7E, 0x7F
     };
 
-
+    struct BoardPin {
+      int boardNo;
+      int boardPin;
+      bool processed;
+    };
 
     int _totalPca9685Boards = 0;
-    int _pwmFrequency = 60;
-
+    int _pwmFrequency = 50;
     Pca9685 * _pca9685Boards;
 
-    void initPca9685Boards();
     BoardPin findBoardPin(int pinNo);
 
   public:
 
-    Pca9685Board(int totalPca9685Boards) : _totalPca9685Boards(totalPca9685Boards) {
-      initPca9685Boards();
+    Pca9685Board()  {
     }
-
-    Pca9685Board(int totalPca9685Boards, int pwmFrequency) : _totalPca9685Boards(totalPca9685Boards), _pwmFrequency(pwmFrequency) {
-      initPca9685Boards();
-    }
-
+    void initPca9685Boards(int totalPca9685Boards);
     bool throwSwitch(int pinNo);
     bool closeSwitch(int pinNo);
     void restBoard(int boardNo);
