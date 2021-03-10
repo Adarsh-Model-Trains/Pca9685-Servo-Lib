@@ -36,11 +36,13 @@ NOTE: Order of Pca9685 board address wise must be in sequence otherwise it will 
 ```
 sda and scl from arduino to pca9685 
 external power supply +5v and gnd to the breadboard 
-    from breadboard external power supply +5v and gnd to the first pca9685  in chain to vcc and gnd 
-    and one gnd from the external power supply to the arduino for common gnd setup 
+from breadboard external power supply +5v and gnd to the first pca9685  in chain to vcc and gnd 
+and +5v and gnd to the 1st pca9685 sidew power inputs 
+and one gnd from the external power supply to the arduino for common gnd setup 
 
 connect the other pca9684 in the chain with 1st soder which has address 41 
 connect the other pca9684 in the chain with 2nd soder which has address 42 
+connect the other pca9684 in the chain with 2nd soder which has address 43 
 
 NOTE please refer the pca9684 board configuation details section
 ```
