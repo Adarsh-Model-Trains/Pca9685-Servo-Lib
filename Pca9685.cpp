@@ -9,9 +9,6 @@
 
 
 void Pca9685::init() {
-  if (_totalPins == -1) {
-    _totalPins = 16;
-  }
   _pca9685PinList = new Pca9685Pin[_totalPins];
   for (int i = 0; i < _totalPins; i++) {
     _pca9685PinList[i]._openState = 1000;

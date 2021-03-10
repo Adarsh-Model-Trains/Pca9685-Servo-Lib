@@ -9,7 +9,11 @@
 
 
 void Pca9685Board::initPca9685Boards(int totalPca9685Boards) {
-  _totalPca9685Boards = totalPca9685Boards;
+  if (totalPca9685Boards > 0 && totalPca9685Boards < 65) {
+    _totalPca9685Boards = totalPca9685Boards;
+  } else {
+    _totalPca9685Boards = 0;
+  }
   _pca9685Boards = new Pca9685[_totalPca9685Boards];
   for (int i = 0; i < _totalPca9685Boards; i++) {
     _pca9685Boards[i].setBoardAddress(_boardAddress[i]);
@@ -19,7 +23,11 @@ void Pca9685Board::initPca9685Boards(int totalPca9685Boards) {
 }
 
 void Pca9685Board::setFrequency(int pwmFrequency) {
-  _pwmFrequency = pwmFrequency;
+  if (pwmFrequency > 39 && pwmFrequency < 1001) {
+    _pwmFrequency = pwmFrequency;
+  } else {
+    _pwmFrequency = 50;
+  }
 }
 
 Pca9685Board::BoardPin Pca9685Board::findBoardPin(int pinNo) {

@@ -22,7 +22,7 @@ class Pca9685 {
   private:
 
     int _defaultState;
-    int _totalPins = -1;
+    int _totalPins = 16;
     int _boardsAddress;
     int _pwmFrequency;
 

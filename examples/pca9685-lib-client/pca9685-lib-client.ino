@@ -12,7 +12,7 @@ void setup() {
 
   MAX_PINS = NO_OF_BOARDS * 16;
   for (int i = 1; i <= MAX_PINS; i++) {
-    pca9685Board.setSwitchRange(i, 100, 400);
+    pca9685Board.setSwitchRange(i, 1200, 1800);
   }
 }
 
