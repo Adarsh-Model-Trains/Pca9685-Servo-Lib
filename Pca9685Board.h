@@ -39,6 +39,7 @@ class Pca9685Board {
     Pca9685Board()  {
     }
     void initPca9685Boards(int totalPca9685Boards);
+    void setFrequency(int pwmFrequency);
     bool throwSwitch(int pinNo);
     bool closeSwitch(int pinNo);
     void restBoard(int boardNo);

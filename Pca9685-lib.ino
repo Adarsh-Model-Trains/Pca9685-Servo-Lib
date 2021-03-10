@@ -10,9 +10,10 @@ Pca9685Board pca9685Board;
 void setup() {
   Serial.begin(9600);
   pca9685Board.initPca9685Boards(NO_OF_BOARDS);
+  pca9685Board.setFrequency(60);
   MAX_PINS = NO_OF_BOARDS * 16;
   for (int i = 1; i <= MAX_PINS; i++) {
-     pca9685Board.setSwitchRange(i, 100, 400);
+    pca9685Board.setSwitchRange(i, 100, 400);
   }
 }
 

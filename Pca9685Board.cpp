@@ -18,6 +18,10 @@ void Pca9685Board::initPca9685Boards(int totalPca9685Boards) {
   }
 }
 
+void Pca9685Board::setFrequency(int pwmFrequency) {
+  _pwmFrequency = pwmFrequency;
+}
+
 Pca9685Board::BoardPin Pca9685Board::findBoardPin(int pinNo) {
   Pca9685Board::BoardPin boardSlot;
   pinNo = pinNo - 1;
