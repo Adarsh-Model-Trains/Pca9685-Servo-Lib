@@ -2,11 +2,11 @@
 
 ---
 
-# <a href="https://github.com/adarshkumarsingh83/Pca9685-lib/archive/main.zip"> Library download link </a>
+# <a href="https://github.com/adarshkumarsingh83/Pca9685-Servo-Lib/archive/main.zip"> Library download link </a>
 
 ## About the Lib
 ```
-Pca9685-lib is for supporing multiple Pca9685 boards together 
+Pca9685-Servo-Lib is for supporing multiple Pca9685 boards together 
 in chain with less complexcity of the programming 
 
 max we can connect 64 Pca9685 together in chain which will give extra 1024 pins for operations 
