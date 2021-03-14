@@ -2,7 +2,7 @@
 
 ---
 
-# <a href="https://github.com/adarshkumarsingh83/Pcf8574-lib/archive/main.zip"> Library download link </a>
+# <a href="https://github.com/adarshkumarsingh83/Pca9685-lib/archive/main.zip"> Library download link </a>
 
 ## About the Lib
 ```
