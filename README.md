@@ -20,7 +20,7 @@ NOTE: Order of Pca9685 board address wise must be in sequence otherwise it will 
 
 
 # YOUTUBE LINK
-[![PCA9685-PWM-BOARD](http://img.youtube.com/vi/SGKnX_kVgc/0.jpg)](https://www.youtube.com/watch?v=SGKnX_kVgc "PCA9685-PWM-BOARD")
+[![PCA9685-PWM-BOARD](http://img.youtube.com/vi/-SGKnX_kVgc/0.jpg)](https://www.youtube.com/watch?v=-SGKnX_kVgc "PCA9685-PWM-BOARD")
 
 
 ## Single Board 
