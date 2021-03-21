@@ -1,4 +1,3 @@
-#include "Pca9685.h"
 #include "Pca9685Board.h"
 
 #define NO_OF_BOARDS 3
