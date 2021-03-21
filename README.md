@@ -63,8 +63,6 @@ NOTE please refer the pca9684 board configuation details section
 
 ## include the header file
 ```
-
-#include "Pca9685.h"
 #include "Pca9685Board.h"
 
 ```
@@ -172,7 +170,6 @@ void loop() {
 
 ### Complete Example
 ```
-#include "Pca9685.h"
 #include "Pca9685Board.h"
 
 #define NO_OF_BOARDS 3
