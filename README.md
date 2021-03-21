@@ -61,6 +61,10 @@ NOTE please refer the pca9684 board configuation details section
 
 ## steps for using lib
 
+### YOUTUBE LINK LIBRARY AND DEMO 
+[![SERVO-CALIBRATION-FOR-TURNOUT-PCA9685-PWM-BOARD](http://img.youtube.com/vi/a1wPu9dkoak/0.jpg)](https://www.youtube.com/watch?v=a1wPu9dkoak "SERVO-CALIBRATION-FOR-TURNOUT-PCA9685-PWM-BOARD") 
+
+
 ## include the header file
 ```
 #include "Pca9685Board.h"
